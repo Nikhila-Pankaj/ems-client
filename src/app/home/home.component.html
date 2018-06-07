@@ -1,0 +1,20 @@
+<div class="app-title">
+  <h1>
+   {{ title }}
+  </h1>
+<div>
+  <table class="table table-hover" *ngFor="let employee of employees">
+    <tr>
+      <th *ngFor="let header of columnHeaders">
+        {{header}}
+      </th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.title}}</td>
+      <td>{{employee.body}}</td>
+      <td>{{employee.address}}</td>
+    </tr>
+  </table>
+</div>
+</div>
