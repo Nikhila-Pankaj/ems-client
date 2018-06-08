@@ -3,17 +3,17 @@
    {{ title }}
   </h1>
 <div>
-  <table class="table table-hover" *ngFor="let employee of employees">
+  <table class="table table-hover">
     <tr>
       <th *ngFor="let header of columnHeaders">
         {{header}}
       </th>
     </tr>
-    <tr *ngFor="let employee of employees">
-      <td>{{employee.id}}</td>
-      <td>{{employee.title}}</td>
-      <td>{{employee.body}}</td>
-      <td>{{employee.address}}</td>
+    <tr *ngFor="let employee of employees" (click)="viewEmployee(employee.id)">
+      <td class="align-middle">{{employee.id}}</td>
+      <td class="align-middle">{{employee.first_name}}</td>
+      <td class="align-middle">{{employee.last_name}}</td>
+      <td class="align-middle"><img class="avatar media-object" src="{{employee.avatar}}" alt=""></td>
     </tr>
   </table>
 </div>

@@ -21,7 +21,8 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot([
-      {path:'', component: HomeComponent}
+      {path:'', component: HomeComponent},
+      {path:'employee', component: UpdateEmployeeComponent}
     ])
   ],
   providers: [

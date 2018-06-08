@@ -1,3 +1,53 @@
-<p>
-  update-employee works!
-</p>
+<div class="media border p-3" *ngIf="isEditable else editForm">  
+  <div class="row">
+    <div class="media-body col-lg-4">
+      <img src="{{employee.avatar}}" class="mr-3 mt-3 rounded-circle">
+    </div>
+    <div class="col-lg-4">
+      <div class="row">
+        <h4>{{employee.first_name}} {{employee.last_name}}</h4>
+        <a href="employee.avatar">{{employee.avatar}}</a>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary align-left" (click)="toggle()">Edit</button>
+        <button class="btn btn-secondary align-left" (click)="goHome()">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--template for editing employee info;visible only on click of edit button-->
+<ng-template #editForm>
+  <div class="row">
+    <div class="col-lg-4 text-xs-center">
+      <div class="row">
+        <img src="{{employee.avatar}}" class="rounded-circle" alt="avatar" />    
+      </div>
+      <div class="row">
+        <button class="btn btn-default m-t-2">Edit Photo</button>
+      </div>          
+    </div>
+    <div class="col-lg-8">
+      <form role="form">
+        <div class="form-group row">
+            <label class="col-lg-3">First name</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="text" value="{{employee.first_name}}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3">Last name</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="text" value="{{employee.last_name}}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3"></label>
+            <div class="col-lg-9">
+                <input type="reset" class="btn btn-secondary" value="Cancel" (click)="toggle()" />
+                <input type="button" class="btn btn-primary" value="Save" (click)="toggle()" />
+            </div>
+        </div>
+      </form>
+    </div>  
+  </div>
+</ng-template>

@@ -9,10 +9,10 @@ import { Injectable } from '@angular/core';
 export class EmployeeService extends DataService {  
 
   constructor(http: Http) {
-    super('http://jsonplaceholder.typicode.com/posts', http);
+    super('https://reqres.in/api/users', http);
    }
 
    getHeaders() {
-    return ["ID", "Title", "Body"];
+    return ["ID", "First Name", "Last Name", ""];
    }
 }
